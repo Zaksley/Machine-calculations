@@ -1,1 +1,39 @@
-coucou
+\documentclass{article}
+
+\begin{document}
+
+Algorithmes CORDIC :
+
+
+1) citer le chapitre ?
+
+2) Quelle est la représentation des nombres utilisés sur une calculatrice ? Quels avantages et inconvénients pouvez-vous voir à ce genre de représentation ?
+
+Dans une calculatrice, les nombres sont représentés en Binaire Code Decimal. Son principe : Les nombre sont représentas par des nombres décimaux et chaque chiffre est codé sur 4 bits.
+Exemple :
+12 en binaire est : 1100
+1 en BCD est : 0001
+2 en BCD est : 0010
+donc 12 en BCD est : 0001 0010
+
+Avanges :
+- Multiplication et division par 10^n plus rapide : shift left ou droit de 4*n bits.
+- Toutes les fonctions 'standard' peuvent se ramener aux quatre fonctions suivantes :  ln, exp, tan, arcta n
+- Calculs plus rapides grâce aux algorithmes de CORDIC
+- Précision de plus de 12 chiffres avec seulement une quinzaine de valeurs précalculées.
+
+Inconvénients :
+- Multiplication et division par 2^n plus lente que l'écriture binaire conventiennele : le shift de 1 bit ne multiplie ou divise plus.
+- Pour un même nombre, prends plus de place en mémoire : besoin de nombre de chiffres * 4 bits contre log_2(nombre) +1
+- Pour utiliser les algorithmes de CORDIC, on a besoin de certains valeurs précalculées.
+
+3) Dans cette page, quatre algorithmes sont décrits pour calculer les fonctions trigonométriques et exponentielles. Quelle est la technique générale utilisée pour réaliser ces algorithmes ? En particulier, en quoi cette technique vous semble t’elle efficace lorsqu’elle est ramenée à une calculatrice ?
+
+Technique générale utilisée pour réaliser ces algorithmes :
+- On décompose le nombre en multiple (exp) ou somme (trigo) des valeurs précalculées
+- Pour chaque valeur précalculée,
+
+exploirent les dev limités à l'ordre 1
+rendre x tres tres petit
+produit partiel = gros produit
+\end{document}
