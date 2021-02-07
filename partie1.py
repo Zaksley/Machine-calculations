@@ -1,4 +1,8 @@
 import math
+import numpy as n;
+import matplotlib.pyplot as p
+
+
 
 print("PARTIE 1")
 """
@@ -41,8 +45,50 @@ def prec_prod(x, y, p):
 
     return (v1 * v2)
 
+def erreur_add(x, y, p):
+    real = x+y
+    computer = prec_add(x, y, p)
 
-value = rp(10.235673, 6)
+    return abs( (real - computer) / real )
+
+def erreur_prod(x, y, p):
+    real = x*y
+    computer = prec_prod(x, y, p)
+
+    return abs( (real - computer) / real )
+
+def calcul_log(prec):
+    sum = 0
+    for i in range(1, prec):
+        sum += pow(-1, i+1) / i
+    return sum
+
+
+prec = 4
+value = calcul_log(prec)
 print(value)
 
+"""
+x = 3.333
+y = 451.32658
+p = 4
 
+v_real = prec_add(x, y, p)
+v_computer = x + y
+
+print(v_real)
+print(v_computer)
+
+s = erreur_add(x, y, p)
+print(s)
+"""
+
+"""
+x=n.linspace(-10,10,100)
+y = 5
+prec = 3
+p.plot(x,prec_add(x, y, prec))  # on utilise la fonction sinus de Numpy
+p.ylabel('fonction sinus')
+p.xlabel("l'axe des abcisses")
+p.show()    
+"""
