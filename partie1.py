@@ -115,6 +115,14 @@ for i in range(1, 7):
     value = erreur_add(calcul_log(prec), n.log(2), prec)
     print("Erreur relative avec une precision " + str(prec) + " : " + str(value))
 
+# Affichage erreur relative du calcul de log 
+lx = [1, 2, 3, 4, 5, 6]
+
+p.plot(lx, [erreur_add(n.log(2), calcul_log(prec), prec) for prec in lx])  # on utilise la fonction sinus de Numpy
+p.ylabel("l'axe des ordonnées")
+p.xlabel("l'axe des abcisses")
+p.show()  
+
 # Affichage de la précision du calcul de log en comparaison avec la vraie valeur de log
 
 value = calcul_log(prec)
