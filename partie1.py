@@ -8,7 +8,7 @@ print("PARTIE 1")
 
 def rp(x, p):
 
-    if ( x== 0):   return 0;
+    if ( x== 0):   return 0
 
     exposant = 0
     while x > 1 or x < -1:
@@ -33,13 +33,13 @@ def prec_add(x, y, p):
     v1 = rp(x, p)
     v2 = rp(y, p)
 
-    return (v1 + v2)
+    return rp(v1 + v2,p)
 
 def prec_prod(x, y, p):
     v1 = rp(x, p)
     v2 = rp(y, p)
 
-    return (v1 * v2)
+    return rp(v1 * v2,p)
 
 def erreur_add(x, y, p):
     real = x+y
