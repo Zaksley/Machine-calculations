@@ -61,6 +61,7 @@ def calcul_log(prec):
     return sum
 
 
+# Tests fonctions erreurs
 """
 x = 3.333
 y = 451.32658
@@ -78,34 +79,40 @@ print(s)
 
 
 # Valeurs intéressantes: 
+    #Graphes
 """
-lx =n.linspace(-10,10,100)  ou 200
-y = 5
+lx =n.linspace(-10,10,200) 
+y = 1
 prec = 3
-
-y=0 special ?! 
-
 """
 
 """
 lx =n.linspace(-10,10,100)
 y = 5.75
 prec = 3
+"""
 
+"""
+fx1 = [erreur_prod(x, y, prec) for x in lx]
 
-fx = [erreur_add(x, y, prec) for x in lx]
+lx2 =n.linspace(-10,10,100)
+y = 5.7555
 
+fx2 = [erreur_prod(x, y, prec) for x in lx2]
 
+fig, axs = p.subplots(2)
+fig.suptitle("Erreur relative sur le produit")
+axs[0].plot(lx, fx1)
+axs[1].plot(lx2, fx2)
 
-p.plot(lx, fx)  # on utilise la fonction sinus de Numpy
-p.ylabel('fonction sinus')
+p.ylabel('Erreur relative')
 p.xlabel("l'axe des abcisses")
-p.show()  """
-
-
+p.show()  
 print()
+"""
 
 
+"""
 # Question 5
 test = 7
 
@@ -136,3 +143,4 @@ p.yscale("log")
 p.ylabel("l'axe des ordonnées")
 p.xlabel("l'axe des abcisses")
 p.show()  
+"""
