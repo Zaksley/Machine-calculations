@@ -88,13 +88,6 @@ def arctan(x):
     if(x_1>1):
         return (np.pi/2)-(r+(x/y))
     return (r+(x/y))
-print("artan(10)",int(arctan(1)*10**12))
-print(int(np.arctan(1)*10**12)-int(arctan(1)*10**12))
-
-T_arctan=[]
-for i in range(1000):
-    T_arctan.append(int(np.arctan(i)*10**12)-int(arctan(i)*10**12))
-print(T_arctan)
 
 
 def tan(x):
@@ -121,12 +114,16 @@ def tan(x):
     	return -(n+x*d)/(d-x*n)
 
     return (n+x*d)/(d-x*n)
-print("pour tant")
-print(tan(1))
-print(np.tan(1))
 
-T_tan=[]
-for i in range(1000):
-    T_tan.append(int(np.tan(i)*10**12)-int(tan(i)*10**12))
-print(T_tan)
 
+import matplotlib.pyplot as plt
+
+#F_Atan=[arctan(i)-np.arctan(i) for i in range(1000)]
+#V_Atan=[np.arctan(i) for i in range(1000)]
+#T=[i for i in range(1000)]
+
+#plt.plot(T,F_tan, 'r')
+#plt.plot(T,V_tan, 'y')
+#plt.show()
+
+#F_tan=[int(tan(i)*(10**12))-int(np.tan(i)*(10**12)) for i in range(1000)]
