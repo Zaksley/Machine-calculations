@@ -46,8 +46,8 @@
 
   ~~~\parbox{0.95\textwidth}{\small \textit{Résumé: } \sffamily 
   Ce projet consiste à étudier les calculs numériques sur machine. 
-  La première partie se focalise sur l'erreur relative engendré par les calculs machines. 
-  La seconde en revanche, étudie les algorithmes par des machines possédant des ressources limités (mémoire, puissance de calcul).
+  La première partie se focalise sur l'erreur relative engendrée par les calculs machines. 
+  La seconde en revanche, étudie les algorithmes par des machines possédant des ressources limitées (mémoire, puissance de calcul).
 }
   \vskip 1mm ~
 \end{minipage}
@@ -56,23 +56,25 @@
 
 \section*{Partie I - Représentation des nombres en machine}
 
+Les machines manipulent des bits. Lors de calculs, des erreurs sont donc engendrées. Nous commençons par étudier l'erreur relative ainsi créée.
+
 \subsection*{Représentation décimale réduite}
 Dans un premier temps, on crée la fonction rp(x, p) qui nous permet de récupérer la représentation décimale réduite d'un nombre en fonction d'une précision donnée.
 
-Pour cela, nous récupérons d'abord la notation scientifique du nombre x. Puis nous sélectionnons seulement les p premières décimales de ce nombre et enfin nous multiplions le résultat obtenu par la puissance de dix perméttant un résultat du même ordre de grandeur que le x passé en paramètre.
+Pour cela, nous récupérons d'abord la notation scientifique du nombre x. Puis nous sélectionnons seulement les p premières décimales de ce nombre et enfin nous multiplions le résultat obtenu par la puissance de dix permettant un résultat du même ordre de grandeur que le x passé en paramètre.
 
 \subsection*{Opérations usuelles en représentation décimale réduite}
 
-Pour simuler les opérations usuelles (addition ou multiplication) en représentation décimale réduite, on crée une fonction qui prends en argument les deux nombres et la précision demandé (On part du principe que la précision est commune aux deux nombres).
+Pour simuler les opérations usuelles (addition ou multiplication) en représentation décimale réduite, on crée une fonction qui prend en argument les deux nombres et la précision demandée (On part du principe que la précision est commune aux deux nombres).
 
-On commence par récupérer la représentation décimale réduite des deux nombres via la fonction précédente. Ensuite, on calcule la somme (resp. multiplication) et on en calcule la représentation décimale réduite. On est obligé de réutiliser la fonction car la somme (resp.multiplication) de deux nombres ne donne pas nécessairement un nombre avec la bonne précision. \\
+On commence par récupérer la représentation décimale réduite des deux nombres via la fonction précédente. Ensuite, on calcule la somme (respectivement la multiplication) et on en calcule la représentation décimale réduite. On est obligé de réutiliser la fonction car la somme (respectivement la multiplication) de deux nombres ne donnent pas nécessairement un nombre avec la bonne précision. \\
 
 Exemple :
-Une précision de 3 sur les nombres 8.547 et 3.589 nous donne 8.54 et 3.59. En les sommant, on obtiens 12.13 qui à une précision de 4. On est donc bien obligé d'appeler une seconde fois la fonction rp() pour une obtenir une précision de 3.
+Une précision de 3 sur les nombres 8.547 et 3.589 nous donne 8.54 et 3.59. En les sommant, on obtient 12.13 qui a une précision de 4. On est donc bien obligé d'appeler une seconde fois la fonction rp() pour une obtenir une précision de 3.
 
 \subsection*{Erreur relative}
 
-On calcule l'erreur relative de la somme et de la multiplication donné par les formules :
+On calcule l'erreur relative de la somme et de la multiplication donnée par les formules :
 \\
 
 Erreur relative sur la somme:
@@ -94,7 +96,7 @@ Sans surprise, plus la précision est forte, plus l'erreur relative est faible.
 
 On pose une précision égale à 3 pour n'avoir ni une précision trop forte (impliquant une erreur relative trop faible) ni une précision trop faible (impliquant une erreur relative trop forte).
 
-Les figures \ref{fig:erreur_sur_la_somme_2} et \ref{fig:erreur_sur_le_produit_2} ci-dessous représentent les erreurs relatives ${x = 1}$, soit une précision supérieure aux décimales du nombre, et ${x = 5.7555}$ soit une précision inférieure aux décimales du nombre. On remarque que l'erreur est maximal quand la somme à calculer est nulle. De plus cette erreur est bien plus grande dans le cas où ${x=5.7555}$ que dans le cas où ${x=1}$ cela peut s'expliquer par le fait que dans ce deuxième cas x possède plus de décimales que la précision choisi ainsi le nombre étant tronqué l'erreur relative en sera donc augmentée. 
+Les figures \ref{fig:erreur_sur_la_somme_2} et \ref{fig:erreur_sur_le_produit_2} ci-dessous représentent les erreurs relatives ${x = 1}$, soit une précision supérieure aux décimales du nombre, et ${x = 5.7555}$ soit une précision inférieure aux décimales du nombre. On remarque que l'erreur est maximale quand la somme à calculer est nulle. De plus cette erreur est bien plus grande dans le cas où ${x=5.7555}$ que dans le cas où ${x=1}$ cela peut s'expliquer par le fait que dans ce deuxième cas x possède plus de décimales que la précision choisi ainsi le nombre étant tronqué l'erreur relative en sera donc augmentée. 
 
 \begin{figure}[ht]
     \begin{minipage}{0.48\textwidth}
@@ -129,9 +131,9 @@ En utilisant le critère spécial des séries alternées, on peut majorer l'erre
     \label{eq:CSSA_majoration}
 \end{equation}
 
-Par conséquant, pour obtenir une précision sur p décimales, on a besoin d'aller à un N égal à ${10^{p}}$. 
+Par conséquent, pour obtenir une précision sur p décimales, on a besoin d'aller à un N égal à ${10^{p}}$. 
 
-Dès lors que l'on arrive à calculer un logarithme approché (en fonction de la précision), on peut en déduire l'erreur relative en fonction de la précision. On affiche sur un graphe l'erreur relative jusqu'à la précision 6 (On ne voit plus de différence avec une précision 7 ou au dessus, l'erreur relative étant inférieur à ${1.10^{-6}}$. Nous obtenons donc les figures suivantes \ref{fig:log_prec} et \ref{fig:compare_log}.
+Dès lors que l'on arrive à calculer un logarithme approché (en fonction de la précision), on peut en déduire l'erreur relative en fonction de la précision. On affiche sur un graphe l'erreur relative jusqu'à la précision 6 (On ne voit plus de différence avec une précision 7 ou au-dessus, l'erreur relative étant inférieure à ${1.10^{-6}}$. Nous obtenons donc les figures suivantes \ref{fig:log_prec} et \ref{fig:compare_log}.
 
 \begin{figure}[ht]
     \begin{minipage}{0.48\textwidth}
@@ -155,14 +157,14 @@ Nous allons maintenant étudier les algorithmes de calcul CORDIC utilisées par 
 
 \subsection*{Représentation des nombres sur calculatrice}
 
-Dans une calculatrice, les nombres sont représentés en Binaire Code Decimal (ou BCD), une écriture binaire plus proche de notre représentation usuelle. Voici son principe : Les nombres sont représentés par des nombres décimaux et chaque chiffre est codé sur 4 bits. \\
+Dans une calculatrice, les nombres sont représentés en Binaire Code Decimal (ou BCD), une écriture binaire plus proche de notre représentation usuelle. Voici son principe : les nombres sont représentés par des nombres décimaux et chaque chiffre est codé sur 4 bits. \\
 
 Voici un exemple d'écriture du nombre 12 : \\
 
 \begin{tabular}{ c | c | c c }
     \label{exemple_de_representation_pour_12}
    Base 10 & Binaire &   \multicolumn{2}{c}{Binaire Code Decimal}\\ \hline
-    12 & 1100 & $\underbrace{0001}$ & $\underbrace{0001}$ \\
+    12 & 1100 & $\underbrace{0001}$ & $\underbrace{0010}$ \\
     & & 1 en binaire & 2 en binaire \\
  \end{tabular} \\ \\ 
 
@@ -197,23 +199,23 @@ L'algorithme CORDIC est basé sur 2 concepts importants :
 
 Technique générale :
 \begin{itemize}
-    \item Le nombre en entrée noté x peut se décomposer sous un produit partiel (pour ln et exp) ou une somme partiel (pour tan et arctan) des valeurs précalculés
-    \item On se sert de ces produits ou sommes pour exploiter les developements  limités à l'ordre 1 des fonctions considérées. Ainsi on approche x en sommant les puissances de 10 (pour une représentation BCD), pondérés par un terme dépendant de la fonction
+    \item Le nombre en entrée noté x peut se décomposer sous un produit partiel (pour ln et exp) ou une somme partielle (pour tan et arctan) des valeurs précalculés
+    \item On se sert de ces produits ou sommes pour exploiter les développements  limités à l'ordre 1 des fonctions considérées. Ainsi on approche x en sommant les puissances de 10 (pour une représentation BCD), pondérés par un terme dépendant de la fonction
     \item Pour chaque terme sommé, on ajoute un terme précalculé au résultat, pondéré par un terme dépendant de la fonction
     \item On retourne le résultat en ajoutant un terme d'erreur
 \end{itemize}
 
 \vspace{1em}
 
-Cette technique est efficace car les valeurs précalculés et l'approche du nombre utilisent des multiplications et des divisions par des puissances de 10. Grâce à l'écriture BCD, lors de l'exécutions de l'algorithlen, la calculatrice ne fait presque qu'exclusivement des shift très peu coûteux.
+Cette technique est efficace car les valeurs précalculées et l'approche du nombre utilisent des multiplications et des divisions par des puissances de 10. Grâce à l'écriture BCD, lors de l'exécution de l'algorithme, la calculatrice ne fait presque qu'exclusivement des shift très peu coûteux.
 
 \subsection*{Implémentation des algorithmes sous Python}
 
-Nous implémentons les algorithmes dans le fichier \cordicPythonFile. Nous utilisons les pseudos algorythmes données dans les ressources du sujet afin d'implémenter nos algorythmes. Les valeurs précalculées sont générés grâce au module numpy avec une précision de 17 chiffres significatifs, ce qui est supérieur au 12 chiffres de précision en sortie d'algorythme.
+Nous implémentons les algorithmes dans le fichier \cordicPythonFile. Nous utilisons les pseudos algorithmes donnés dans les ressources du sujet afin d'implémenter nos algorithmes. Les valeurs précalculées sont générées grâce au module numpy avec une précision de 17 chiffres significatifs, ce qui est supérieur aux 12 chiffres de précision en sortie d'algorithme.
 
-Nos algorithme sont divisé en deux parties. La première ramène la valeur en entrée dans l'interval où la méthode est applicable. Nous utilisons les décompositions données dans les ressources du sujet, en vérifiant préalablement que la décomposition sont bien équivalente. La seconde partie calcul et retourne le résultat en utilisant l'algorythme CORDIC.
+Nos algorithmes sont divisés en deux parties. La première ramène la valeur en entrée dans l'intervalle où la méthode est applicable. Nous utilisons les décompositions données dans les ressources du sujet, en vérifiant préalablement qu'elles sont bien équivalentes. La seconde partie calcule et retourne le résultat en utilisant l'algorithme CORDIC.
 
-La première partie est testé en comparant le résultat avec et sans réduction de l'interval (la seconde partie fonctionne en effet sur $\mathbb{R}$). Les résultats de la seconde partie sont comparés avec les valeur  obtenues avec WolfrAmalpha et l'implémentation des fonctions ln, exp, tan et arctan dans la librairie numpy de python. Les figures \ref{fig:figure_tan_moins_tan} et \ref{fig:compare_log} représentent une partie des résultats des tests :
+La première partie est testée en comparant le résultat avec et sans réduction de l'intervalle (la seconde partie fonctionne en effet sur $\mathbb{R}$). Les résultats de la seconde partie sont comparés avec les valeurs  obtenues avec WolfrAmalpha et l'implémentation des fonctions ln, exp, tan et arctan dans la librairie numpy de python. Les figures \ref{fig:figure_tan_moins_tan} et \ref{fig:compare_log} représentent une partie des résultats des tests :
 
 \begin{figure}[!htb]
     \begin{minipage}{0.48\textwidth}
@@ -230,11 +232,11 @@ La première partie est testé en comparant le résultat avec et sans réduction
     \end{minipage}
 \end{figure}
 
-Nous remarquons que la précision des résulats dimminue change si nous utilisons la base 2, ce qui conduit à remplacer tous les $10^n$ par $2^n$. La figure \ref{fig:figure_tan_moins_tan} montre la différence de précision par rapport à numpy. Pour la base 10, l'écart maximal avec numpy est de l'ordre de $10^{-13}$, $10^{-5}$ pour la base 2. Les algorithmes ainsi modifiées se trouvent également dans le fichier \cordicPythonFile. De plus, avec un tableau plus grand, il est possible d'augmenter la précision du résultat (il faut également modifier les boucles while)
+Nous remarquons que la précision des résultats diminue si nous utilisons la base 2, ce qui conduit à remplacer tous les $10^n$ par $2^n$. La figure \ref{fig:figure_tan_moins_tan} montre la différence de précision par rapport à numpy. Pour la base 10, l'écart maximal avec numpy est de l'ordre de $10^{-13}$, $10^{-5}$ pour la base 2. Les algorithmes ainsi modifiés se trouvent également dans le fichier \cordicPythonFile. De plus, avec un tableau plus grand, il est possible d'augmenter la précision du résultat (il faut également modifier les boucles while)
 
 \subsection*{Problèmes lors de l’évaluation de fonctions usuelles en machine}
 
-(P.167) Certaines fonctions usuelles, comme le sinus, ont un développement en série entière qui convergent lentement, ce qui rend le temps de calcul très long lors de l'évaluation informatique de la fonction à partir de sa série entière. Une façon de palier à ce problème est de faire une transformation d'Euler de cette série entière, ainsi on est sûr que les nouveaux termes de la séries obtenue convergent rapidement vers 0.\\
+(P.167) Certaines fonctions usuelles, comme le sinus, ont un développement en série entière qui converge lentement, ce qui rend le temps de calcul très long lors de l'évaluation informatique de la fonction à partir de sa série entière. Une façon de résoudre ce problème est de faire une transformation d'Euler de cette série entière, ainsi nous sommes sûrs que les nouveaux termes de la série obtenue convergent rapidement vers 0.\\
 \begin{equation}
     \sum_{n=0}^\infty (-1)^n a_n = \sum_{n=0}^\infty (-1)^n \frac {\Delta^n a_0} {2^{n+1}}
     \label{eq:Euler_Transfo}
@@ -253,16 +255,16 @@ ou
 
 Cette expression, provenant de la définition de la dérivée, est source d'erreurs informatiquement.
 
-La première erreur est de choisir un h fixé et d’abandonner les termes restant du développement de Taylor de la fonction en x :
+La première erreur est de choisir un h fixé et d’abandonner les termes restants du développement de Taylor de la fonction en x :
 \begin{equation}
     \frac{f(x+h)-f(x)}{h}=f'+\frac{1}{2}hf''+ \dots
     \label{eq:developpement_de_Taylor}
 \end{equation}
 
-Pour palier à ce problème, il convient de choisir un h optimal de sorte a minimiser l'erreur dans notre expression approximative \ref{eq:derivee}. En notant $e_f$ la précision sur notre évaluation de $f$, le h optimal à choisir est pris $h = \sqrt{xe_f}$.
+Pour pallier ce problème, il convient de choisir un h optimal de sorte à minimiser l'erreur dans notre expression approximative \ref{eq:derivee}. En notant $e_f$ la précision sur notre évaluation de $f$, le h optimal à choisir est $h = \sqrt{xe_f}$.
 \newline
 
-(P.186)La seconde erreur est due à l'encodage des nombre sur machine. Le h qu'on a choisi peut être arrondi. Pour des fonctions comme tan qui croît extrêmement vite au voisinage de $\frac{\pi}{2}$, ces arrondis peuvent donner des valeur de dérivés fausses. Une solution est de choisir alors h de sorte que $x+h$ dans \ref{eq:derivee} soit représentable en mémoire de manière exacte.
+(P.186) La seconde erreur est due à l'encodage des nombres sur machine. Le h qu'on a choisi peut-être arrondi. Pour des fonctions comme tan qui croît extrêmement vite au voisinage de $\frac{\pi}{2}$, ces arrondis peuvent donner des valeurs de dérivées fausses. Une solution est de choisir alors h de sorte que $x+h$ dans \ref{eq:derivee} soit représentable en mémoire de manière exacte.
 
 
 \end{document}

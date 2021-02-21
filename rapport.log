@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.29)  21 FEB 2021 22:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.29)  21 FEB 2021 23:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -174,12 +174,12 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--77
+Underfull \hbox (badness 10000) in paragraph at lines 77--79
 
  []
 
@@ -189,47 +189,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--77
 <images/erreur_add.png, id=15, 462.528pt x 346.896pt>
 File: images/erreur_add.png Graphic file (type png)
 <use images/erreur_add.png>
-Package pdftex.def Info: images/erreur_add.png  used on input line 102.
+Package pdftex.def Info: images/erreur_add.png  used on input line 104.
 (pdftex.def)             Requested size: 222.01091pt x 166.50818pt.
 
-Overfull \hbox (10.3243pt too wide) in paragraph at lines 102--103
+Overfull \hbox (10.3243pt too wide) in paragraph at lines 104--105
  [][] 
  []
 
 <images/erreur_prod.png, id=17, 462.528pt x 346.896pt>
 File: images/erreur_prod.png Graphic file (type png)
 <use images/erreur_prod.png>
-Package pdftex.def Info: images/erreur_prod.png  used on input line 108.
+Package pdftex.def Info: images/erreur_prod.png  used on input line 110.
 (pdftex.def)             Requested size: 222.01091pt x 166.50818pt.
 
-Overfull \hbox (10.3243pt too wide) in paragraph at lines 108--109
+Overfull \hbox (10.3243pt too wide) in paragraph at lines 110--111
  [][] 
  []
 
 [2 <./images/erreur_add.png> <./images/erreur_prod.png>]
-<images/erreur_relative.png, id=27, 462.528pt x 346.896pt>
+<images/erreur_relative.png, id=24, 462.528pt x 346.896pt>
 File: images/erreur_relative.png Graphic file (type png)
 <use images/erreur_relative.png>
-Package pdftex.def Info: images/erreur_relative.png  used on input line 139.
+Package pdftex.def Info: images/erreur_relative.png  used on input line 141.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (19.57681pt too wide) in paragraph at lines 139--140
+Overfull \hbox (19.57681pt too wide) in paragraph at lines 141--142
  [][] 
  []
 
-<images/graphes_log.png, id=28, 462.528pt x 346.896pt>
+<images/graphes_log.png, id=25, 462.528pt x 346.896pt>
 File: images/graphes_log.png Graphic file (type png)
 <use images/graphes_log.png>
-Package pdftex.def Info: images/graphes_log.png  used on input line 145.
+Package pdftex.def Info: images/graphes_log.png  used on input line 147.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (19.57681pt too wide) in paragraph at lines 145--146
+Overfull \hbox (19.57681pt too wide) in paragraph at lines 147--148
  [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
-
  []
 
 
@@ -238,39 +233,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--161
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--168
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+ []
+
+[3 <./images/erreur_relative.png> <./images/graphes_log.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 164--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--168
+Underfull \hbox (badness 10000) in paragraph at lines 164--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
-[3 <./images/erreur_relative.png> <./images/graphes_log.png>] [4]
+[4]
 <images/ecart_atan.png, id=37, 595.22375pt x 466.74374pt>
 File: images/ecart_atan.png Graphic file (type png)
 <use images/ecart_atan.png>
-Package pdftex.def Info: images/ecart_atan.png  used on input line 221.
+Package pdftex.def Info: images/ecart_atan.png  used on input line 223.
 (pdftex.def)             Requested size: 208.33144pt x 163.36275pt.
 <images/ecart_arctan_base10.png, id=38, 601.24625pt x 464.73625pt>
 File: images/ecart_arctan_base10.png Graphic file (type png)
 <use images/ecart_arctan_base10.png>
-Package pdftex.def Info: images/ecart_arctan_base10.png  used on input line 227
+Package pdftex.def Info: images/ecart_arctan_base10.png  used on input line 229
 .
 (pdftex.def)             Requested size: 210.43933pt x 162.66011pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
 
  []
 
 [5 <./images/ecart_atan.png> <./images/ecart_arctan_base10.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 262--264
+Underfull \hbox (badness 10000) in paragraph at lines 264--266
 
  []
 
@@ -278,11 +278,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 262--264
 Here is how much of TeX's memory you used:
  3100 strings out of 483081
  43975 string characters out of 5963441
- 282706 words of memory out of 5000000
+ 283706 words of memory out of 5000000
  18121 multiletter control sequences out of 15000+600000
  537446 words of font info for 43 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 30i,15n,35p,680b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,15n,35p,681b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 csc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.
@@ -297,7 +297,7 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 c/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on rapport.pdf (6 pages, 354141 bytes).
+Output written on rapport.pdf (6 pages, 354389 bytes).
 PDF statistics:
  92 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream
