@@ -248,7 +248,7 @@ ou
 (P.186) Cependant en supposant  qu'on a réussi à avoir une implémentation efficace d'une fonction f, il reste à minimiser les erreurs liées à l'évaluation de ses dérivés. On a pour h proche de 0 : 
 \begin{equation}
     f(x)\approx\frac{f(x+h)-f(x)}{h}
-    \label{eq:derivée}
+    \label{eq:derivee}
 \end{equation}
 
 Cette expression, provenant de la définition de la dérivée, est source d'erreurs informatiquement.
@@ -259,7 +259,7 @@ La première erreur est de choisir un h fixé et d’abandonner les termes resta
     \label{eq:developpement_de_Taylor}
 \end{equation}
 
-Pour palier à ce problème, il convient de choisir un h optimal de sorte a minimiser l'erreur dans notre expression approximative \ref{eq:derivée}. En notant $e_f$ la précision sur notre évaluation de $f$, le h optimal à choisir est pris $h = \sqrt{xe_f}$.
+Pour palier à ce problème, il convient de choisir un h optimal de sorte a minimiser l'erreur dans notre expression approximative \ref{eq:derivee}. En notant $e_f$ la précision sur notre évaluation de $f$, le h optimal à choisir est pris $h = \sqrt{xe_f}$.
 \newline
 
 (P.186)La seconde erreur est due à l'encodage des nombre sur machine. Le h qu'on a choisi peut être arrondi. Pour des fonctions comme tan qui croît extrêmement vite au voisinage de $\frac{\pi}{2}$, ces arrondis peuvent donner des valeur de dérivés fausses. Une solution est de choisir alors h de sorte que $x+h$ dans \ref{eq:derivée} soit représentable en mémoire de manière exacte.
