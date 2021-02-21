@@ -47,7 +47,7 @@
   ~~~\parbox{0.95\textwidth}{\small \textit{Résumé: } \sffamily 
   Ce projet consiste à étudier les calculs numériques sur machine. 
   La première partie se focalise sur l'erreur relative engendrée par les calculs machines. 
-  La seconde en revanche, étudie les algorithmes par des machines possédant des ressources limitées (mémoire, puissance de calcul).
+  La seconde en revanche, étudie les algorithmes utilisés par des machines possédant des ressources limitées (mémoire, puissance de calcul).
 }
   \vskip 1mm ~
 \end{minipage}
@@ -192,7 +192,7 @@ Inconvénients :
 L'algorithme CORDIC est basé sur 2 concepts importants :
 \begin{itemize}
     \item La recherche : On s'approche de la valeur cible en ajoutant des valeurs précalculées de plus en plus petites
-    \item Le remplacement des multiplications coûteuses en temps par des shifts
+    \item Le remplacement des multiplications et des divisions coûteuses en temps par des shifts
 \end{itemize}
 
 \vspace{1em}
@@ -215,7 +215,7 @@ Nous implémentons les algorithmes dans le fichier \cordicPythonFile. Nous utili
 
 Nos algorithmes sont divisés en deux parties. La première ramène la valeur en entrée dans l'intervalle où la méthode est applicable. Nous utilisons les décompositions données dans les ressources du sujet, en vérifiant préalablement qu'elles sont bien équivalentes. La seconde partie calcule et retourne le résultat en utilisant l'algorithme CORDIC.
 
-La première partie est testée en comparant le résultat avec et sans réduction de l'intervalle (la seconde partie fonctionne en effet sur $\mathbb{R}$). Les résultats de la seconde partie sont comparés avec les valeurs  obtenues avec WolfrAmalpha et l'implémentation des fonctions ln, exp, tan et arctan dans la librairie numpy de python. Les figures \ref{fig:figure_tan_moins_tan} et \ref{fig:compare_log} représentent une partie des résultats des tests :
+La première partie est testée en comparant le résultat avec et sans réduction de l'intervalle (la seconde partie fonctionne en effet sur $\mathbb{R}$). Les résultats de la seconde partie sont comparés avec les valeurs  obtenues avec WolfrAmalpha et l'implémentation des fonctions ln, exp, tan et arctan dans la librairie numpy de python. Les figures \ref{fig:figure_tan_moins_tan} et \ref{fig:figure_compare_log} représentent une partie des résultats des tests :
 
 \begin{figure}[!htb]
     \begin{minipage}{0.48\textwidth}
@@ -261,10 +261,10 @@ La première erreur est de choisir un h fixé et d’abandonner les termes resta
     \label{eq:developpement_de_Taylor}
 \end{equation}
 
-Pour pallier ce problème, il convient de choisir un h optimal de sorte à minimiser l'erreur dans notre expression approximative \ref{eq:derivee}. En notant $e_f$ la précision sur notre évaluation de $f$, le h optimal à choisir est $h = \sqrt{xe_f}$.
+Pour pallier ce problème, il convient de choisir un h optimal de sorte à minimiser l'erreur dans notre expression approximative, équation \ref{eq:derivee}. En notant $e_f$ la précision sur notre évaluation de $f$, le h optimal à choisir est $h = \sqrt{xe_f}$.
 \newline
 
-(P.186) La seconde erreur est due à l'encodage des nombres sur machine. Le h qu'on a choisi peut-être arrondi. Pour des fonctions comme tan qui croît extrêmement vite au voisinage de $\frac{\pi}{2}$, ces arrondis peuvent donner des valeurs de dérivées fausses. Une solution est de choisir alors h de sorte que $x+h$ dans \ref{eq:derivee} soit représentable en mémoire de manière exacte.
+(P.186) La seconde erreur est due à l'encodage des nombres sur machine. Le h qu'on a choisi peut-être arrondi. Pour des fonctions comme tan qui croît extrêmement vite au voisinage de $\frac{\pi}{2}$, ces arrondis peuvent donner des valeurs de dérivées fausses. Une solution est de choisir alors h de sorte que $x+h$ dans l'équation \ref{eq:derivee} soit représentable en mémoire de manière exacte.
 
 
 \end{document}
