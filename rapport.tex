@@ -100,13 +100,13 @@ Les figures \ref{fig:erreur_sur_la_somme_2} et \ref{fig:erreur_sur_le_produit_2}
 \begin{figure}[ht]
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[scale=0.48]{erreur_add.png}
+        \includegraphics[scale=0.48]{images/erreur_add.png}
         \caption{Erreur relative sur la somme}
         \label{fig:erreur_sur_la_somme_2}
     \end{minipage}\hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[scale=0.48]{erreur_prod.png}
+        \includegraphics[scale=0.48]{images/erreur_prod.png}
         \caption{Erreur relative sur le produit}
         \label{fig:erreur_sur_le_produit_2}
     \end{minipage}
@@ -137,13 +137,13 @@ Dès lors que l'on arrive à calculer un logarithme approché (en fonction de la
 \begin{figure}[ht]
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[scale=0.5]{erreur_relative.png}
+        \includegraphics[scale=0.5]{images/erreur_relative.png}
         \caption{Erreur relative du log en fonction de la précision}
         \label{fig:log_prec}
     \end{minipage}\hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[scale=0.5]{graphes_log.png}
+        \includegraphics[scale=0.5]{images/graphes_log.png}
         \caption{Les deux log calculés, valeur réelle et valeur approchée en fonction de la précision}
         \label{fig:compare_log}
     \end{minipage}
@@ -219,13 +219,13 @@ La première partie est testé en comparant le résultat avec et sans réduction
 \begin{figure}[!htb]
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[scale=0.35]{ecart_atan.png}
+        \includegraphics[scale=0.35]{images/ecart_atan.png}
         \caption{Différence entre l'implémentation CORDIC de arctan et celle du module numpy de python pour les bases 2 et 10}
         \label{fig:figure_tan_moins_tan}
     \end{minipage}\hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[scale=0.35]{ecart_arctan_base10.png}
+        \includegraphics[scale=0.35]{images/ecart_arctan_base10.png}
         \caption{Différence entre l'implémentation CORDIC de arctan et celle du module numpy de python pour la bases 10 uniquement}
         \label{fig:figure_compare_log}
     \end{minipage}
@@ -263,7 +263,7 @@ La première erreur est de choisir un h fixé et d’abandonner les termes resta
 Pour palier à ce problème, il convient de choisir un h optimal de sorte a minimiser l'erreur dans notre expression approximative \ref{eq:derivée}. En notant $e_f$ la précision sur notre évaluation de $f$, le h optimal à choisir est pris $h = \sqrt{xe_f}$.
 \newline
 
-La seconde erreur est due à l'encodage des nombre sur machine. Le h qu'on a choisi peut être arrondi. Pour des fonctions comme tan qui croît extrêmement vite au voisinage de $\frac{\pi}{2}$, ces arrondis peuvent donner des valeur de dérivés fausses. Une solution est de choisir alors h de sorte que $x+h$ dans \ref{eq:derivée} soit représentable en mémoire de manière exacte.
+(P.186)La seconde erreur est due à l'encodage des nombre sur machine. Le h qu'on a choisi peut être arrondi. Pour des fonctions comme tan qui croît extrêmement vite au voisinage de $\frac{\pi}{2}$, ces arrondis peuvent donner des valeur de dérivés fausses. Une solution est de choisir alors h de sorte que $x+h$ dans \ref{eq:derivée} soit représentable en mémoire de manière exacte.
 
 
 \end{document}
